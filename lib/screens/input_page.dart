@@ -11,6 +11,10 @@ import '../components/calculator_brain.dart';
 enum genderType { male, female }
 
 class InputPage extends StatefulWidget {
+  String nameText;
+
+  InputPage({this.nameText});
+
   @override
   _InputPageState createState() => _InputPageState();
 }
@@ -18,8 +22,8 @@ class InputPage extends StatefulWidget {
 class _InputPageState extends State<InputPage> {
   genderType gender;
   int height = 120;
-  int weight = 0;
-  int age = 0;
+  int weight = 40;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -151,9 +155,12 @@ class _InputPageState extends State<InputPage> {
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
                                 onPress: () {
-                                  setState(() {
-                                    weight--;
-                                  });
+                                  if (weight == 0) {
+                                  } else {
+                                    setState(() {
+                                      weight--;
+                                    });
+                                  }
                                 },
                               ),
                               SizedBox(
@@ -162,9 +169,12 @@ class _InputPageState extends State<InputPage> {
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
                                 onPress: () {
-                                  setState(() {
-                                    weight++;
-                                  });
+                                  if (weight == 100) {
+                                  } else {
+                                    setState(() {
+                                      weight++;
+                                    });
+                                  }
                                 },
                               ),
                             ],
@@ -193,9 +203,12 @@ class _InputPageState extends State<InputPage> {
                               RoundIconButton(
                                 icon: FontAwesomeIcons.minus,
                                 onPress: () {
-                                  setState(() {
-                                    age--;
-                                  });
+                                  if (age == 0) {
+                                  } else {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  }
                                 },
                               ),
                               SizedBox(
@@ -204,9 +217,12 @@ class _InputPageState extends State<InputPage> {
                               RoundIconButton(
                                 icon: FontAwesomeIcons.plus,
                                 onPress: () {
-                                  setState(() {
-                                    age++;
-                                  });
+                                  if (age == 100) {
+                                  } else {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  }
                                 },
                               ),
                             ],
@@ -233,6 +249,7 @@ class _InputPageState extends State<InputPage> {
                         resultAdvice: calculateInstance.resultAdvice(),
                         age: age.toString(),
                         gender: gender == genderType.male ? 'Male' : 'Female',
+                        name: widget.nameText,
                       );
                     },
                   ),

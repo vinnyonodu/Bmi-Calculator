@@ -9,13 +9,15 @@ class ResultPage extends StatelessWidget {
       @required this.resultText,
       @required this.resultAdvice,
       @required this.age,
-      @required this.gender});
+      @required this.gender,
+      @required this.name});
 
   String resultValue;
   String resultText;
   String resultAdvice;
   String age;
   String gender;
+  String name;
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +30,18 @@ class ResultPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Expanded(
-            child: Container(
-              padding: EdgeInsets.all(15.0),
-              //alignment: Alignment.bottomLeft,
-              child: Text(
-                'Result :  $age-year-old $gender',
-                style: kResultTitleText,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+              child: Container(
+                //alignment: Alignment.bottomLeft,
+                child: Text(
+                  'BMI result of a $age-year-old $gender',
+                  style: TextStyle(
+                    fontSize: 21.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
           ),
@@ -60,7 +68,7 @@ class ResultPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    resultAdvice,
+                    '$name, $resultAdvice',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22.0,

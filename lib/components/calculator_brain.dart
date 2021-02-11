@@ -26,9 +26,9 @@ class CalculatorBrain {
 
   String resultAdvice() {
     if (bmi >= 30.0) {
-      return 'Please eat less, exercise and hydrate properly';
+      return 'Please eat healthy, exercise and hydrate properly';
     } else if (bmi >= 25.0 && bmi < 30.0) {
-      return 'Please eat less, exercise everyday';
+      return 'Please eat healthy, exercise everyday';
     } else if (bmi >= 18.0 && bmi < 25.0) {
       return 'Amazing BMI, you are doing well!';
     } else {
